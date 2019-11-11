@@ -144,11 +144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bc25faaf5545f45a46947415aee0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowKeys: 0
+  Player2: 0
   hspeed: 0
   vspeed: 0
   speedMax: 0.1
   speedIncr: 0.25
+  speed: 5
 --- !u!136 &39515396
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -497,11 +498,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97bc25faaf5545f45a46947415aee0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowKeys: 1
+  Player2: 1
   hspeed: 0
   vspeed: 0
   speedMax: 0.1
   speedIncr: 0.25
+  speed: 5
 --- !u!136 &2105822334
 CapsuleCollider:
   m_ObjectHideFlags: 0
