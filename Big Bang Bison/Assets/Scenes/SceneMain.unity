@@ -575,6 +575,11 @@ PrefabInstance:
       propertyPath: teamAlliance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6313641248952945065, guid: f21347cf35c138e4c9a89d750ce7513b,
+        type: 3}
+      propertyPath: playerStrength
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21347cf35c138e4c9a89d750ce7513b, type: 3}
 --- !u!4 &471953967 stripped
@@ -761,6 +766,11 @@ PrefabInstance:
         type: 3}
       propertyPath: teamAlliance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313641248952945065, guid: f21347cf35c138e4c9a89d750ce7513b,
+        type: 3}
+      propertyPath: playerStrength
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21347cf35c138e4c9a89d750ce7513b, type: 3}
@@ -1043,6 +1053,11 @@ PrefabInstance:
       propertyPath: teamAlliance
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6313641248952945065, guid: f21347cf35c138e4c9a89d750ce7513b,
+        type: 3}
+      propertyPath: playerStrength
+      value: 0.35
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21347cf35c138e4c9a89d750ce7513b, type: 3}
 --- !u!1001 &1711201729
@@ -1121,6 +1136,11 @@ PrefabInstance:
         type: 3}
       propertyPath: teamAlliance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313641248952945065, guid: f21347cf35c138e4c9a89d750ce7513b,
+        type: 3}
+      propertyPath: playerStrength
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21347cf35c138e4c9a89d750ce7513b, type: 3}
@@ -1277,6 +1297,11 @@ PrefabInstance:
       propertyPath: teamAlliance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6313641248952945065, guid: f21347cf35c138e4c9a89d750ce7513b,
+        type: 3}
+      propertyPath: playerStrength
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 6313641248952945066, guid: f21347cf35c138e4c9a89d750ce7513b,
         type: 3}
       propertyPath: m_UseGravity
@@ -1360,6 +1385,11 @@ PrefabInstance:
         type: 3}
       propertyPath: teamAlliance
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6313641248952945065, guid: f21347cf35c138e4c9a89d750ce7513b,
+        type: 3}
+      propertyPath: playerStrength
+      value: 0.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f21347cf35c138e4c9a89d750ce7513b, type: 3}
