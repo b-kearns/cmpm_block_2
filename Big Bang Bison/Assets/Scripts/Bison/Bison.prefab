@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: d35947506498ba449845391a9567a996, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,8 +94,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player1: {fileID: 0}
   Player2: {fileID: 0}
+  Herd: {fileID: 0}
   rb: {fileID: 0}
-  strength: 0.557
+  Ground: {fileID: 0}
+  onGround: 1
+  playerStrength: 0.75
+  bisonStrength: 0.1
+  maxDistFromCenter: 10
+  offGroundMat: {fileID: 2100000, guid: 3c36cd032184e574d8cdb031d34a068b, type: 2}
+  team1Mat: {fileID: 2100000, guid: c40c2073b9af64d479eac8bb3a755094, type: 2}
+  team2Mat: {fileID: 2100000, guid: 2566c6926e14bb7499297f9d62d5486d, type: 2}
+  teamAlliance: 0
 --- !u!54 &6313641248952945066
 Rigidbody:
   m_ObjectHideFlags: 0

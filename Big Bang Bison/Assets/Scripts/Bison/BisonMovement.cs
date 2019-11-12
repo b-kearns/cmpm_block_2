@@ -10,11 +10,17 @@ public class BisonMovement : MonoBehaviour
     public GameObject Herd;
     private bool inPlay = true;
     public Rigidbody rb;
+    public GameObject Ground;
+    public bool onGround = true;
+    private Vector2 groundPos;
 
     [SerializeField, Range(0, 10)]
     private float playerStrength = 0.75f;
     [SerializeField, Range(0, 10)]
     private float bisonStrength = 0.1f;
+    public float maxDistFromCenter;
+    public Material offGroundMat;
+    public int teamAlliance;
 
     // Start is called before the first frame update
     void Start()
@@ -23,15 +29,21 @@ public class BisonMovement : MonoBehaviour
         Player1 = GameObject.Find("PlayerRed");
         Player2 = GameObject.Find("PlayerBlue");
         Herd = GameObject.Find("Bison Herd");
+        Ground = GameObject.Find("Ground");
+        groundPos = new Vector2(Ground.transform.position.x, Ground.transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check out of bounds
-        if (transform.position.magnitude > 10)
-        {
+        float distanceFromCenter = Vector2.Distance(new Vector2(transform.position.x, transform.position.z), groundPos);
+        if (distanceFromCenter > maxDistFromCenter) {
+            onGround = false;
+        }
+        if (!onGround) {
             Ragdoll();
+            GetComponent<Renderer>().material = offGroundMat;
         }
 
         if (this.inPlay)

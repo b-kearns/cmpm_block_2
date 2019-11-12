@@ -22,6 +22,8 @@ public class ScrPlayerMovement : MonoBehaviour
     private string player_horizontal;
     private string player_vertical;
 
+    public GameObject scoreKeeper;
+
     void Start()
     {
         upKey = (Player2) ? KeyCode.UpArrow : KeyCode.W;
@@ -32,21 +34,21 @@ public class ScrPlayerMovement : MonoBehaviour
         {
             player_horizontal = "Horizontal_Player2";
             player_vertical = "Vertical_Player2";
-            Debug.Log("set p2");
+            //Debug.Log("set p2");
         }
         else
         {
             player_horizontal = "Horizontal_Player1";
             player_vertical = "Vertical_Player1";
         }
-        Debug.Log(Input.GetJoystickNames().Length);
+        //Debug.Log(Input.GetJoystickNames().Length);
     }
 
     void Update()
     {
 
         float horizontal = Input.GetAxisRaw(player_horizontal);
-        Debug.Log(horizontal);
+        //Debug.Log(horizontal);
         float vertical = Input.GetAxisRaw(player_vertical);
 
         if (Input.GetKey(upKey) || vertical == -1.0f)
@@ -75,6 +77,11 @@ public class ScrPlayerMovement : MonoBehaviour
 
         hspeed = Mathf.Lerp(hspeed, hspeedDest, speedIncr);
         vspeed = Mathf.Lerp(vspeed, vspeedDest, speedIncr);
+
+        if (scoreKeeper.GetComponent<ScrKeepScore>().gameover) {
+            hspeed = 0;
+            vspeed = 0;
+        }
 
         transform.position = new Vector3(transform.position.x + hspeed, transform.position.y, transform.position.z + vspeed);
     }
