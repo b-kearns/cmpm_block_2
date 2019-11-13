@@ -32,21 +32,31 @@ public class ScrPlayerMovement : MonoBehaviour
         {
             player_horizontal = "Horizontal_Player2";
             player_vertical = "Vertical_Player2";
-            Debug.Log("set p2");
         }
         else
         {
             player_horizontal = "Horizontal_Player1";
             player_vertical = "Vertical_Player1";
         }
-        Debug.Log(Input.GetJoystickNames().Length);
+
+        /*This is for debugging and figuring out what joynum to set the controllers to if needed*/
+
+        /*string[] joystick_array = Input.GetJoystickNames();
+        Debug.Log("length of array: " + joystick_array.Length);
+        for (int i = 0; i < joystick_array.Length; i++)
+        {
+            string content = joystick_array[i];
+            if (content.Contains("Controller"))
+            {
+                Debug.Log("controller found at position " + i + 1);
+            }
+        }*/ 
     }
 
     void Update()
     {
 
         float horizontal = Input.GetAxisRaw(player_horizontal);
-        Debug.Log(horizontal);
         float vertical = Input.GetAxisRaw(player_vertical);
 
         if (Input.GetKey(upKey) || vertical == -1.0f)
