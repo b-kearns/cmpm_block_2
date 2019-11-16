@@ -16,8 +16,13 @@ public class BisonMovement : MonoBehaviour
 
     [SerializeField, Range(0, 10)]
     private float playerStrength = 0.75f;
+
     [SerializeField, Range(0, 10)]
     private float bisonStrength = 0.1f;
+
+    [SerializeField, Range(0, 1)]
+    private float bisonSpook = 0.1f;
+
     public float maxDistFromCenter;
     public Material offGroundMat;
     public int teamAlliance;
@@ -54,6 +59,10 @@ public class BisonMovement : MonoBehaviour
             force = PlayerForce(Player2);
             rb.AddForce(force, ForceMode.Impulse);
 
+            // Testing bison turning AI
+            TurnAway(Player1.transform.position);
+            TurnAway(Player2.transform.position);
+
             // Apply force from bisons
             // For each bison
             for (int i = 0; i < Herd.transform.childCount; i++)
@@ -63,6 +72,18 @@ public class BisonMovement : MonoBehaviour
             }
         }
         
+    }
+
+    // From https://forum.unity.com/threads/rotate-away-from-game-object-method.144651/
+    public void TurnAway(Vector3 position)
+    {
+        Vector3 facing = position - transform.position;
+        if (facing.magnitude < 1.0f) { return; }
+        if (facing.magnitude > 10f) { return; }
+        float turnSpeed = bisonSpook * (facing.magnitude+1)/10;
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(facing), turnSpeed * Time.deltaTime);
+        transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
     }
 
     // Function to calculate force bison are exerting on bison
